@@ -288,76 +288,8 @@
                     <p class="subtitle">The Best Price Tracker for DonutSMP</p>
                 </div>
 
-                <div class="search-section">
-                    <div class="search-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.34-4.34"></path>
-                        </svg>
-                        <input type="text" placeholder="Search items..."/>
-                    </div>
-                </div>
 
-                <div id="categories-container">
-                    <div class="empty-state">
-                        <p>Ready to add items</p>
-                        <p style="font-size: 0.875rem;">Items will appear here</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <script>
-            // Helper function to create item cards
-            function addItem(categoryName, itemName, value, emoji = "📦") {
-                let categorySection = document.querySelector(`[data-category="${categoryName}"]`);
-                
-                if (!categorySection) {
-                    const container = document.getElementById('categories-container');
-                    if (container.querySelector('.empty-state')) {
-                        container.innerHTML = '';
-                    }
-                    
-                    categorySection = document.createElement('div');
-                    categorySection.className = 'category-section';
-                    categorySection.setAttribute('data-category', categoryName);
-                    categorySection.innerHTML = `
-                        <h2 class="category-title">${categoryName}</h2>
-                        <div class="items-grid" data-grid="${categoryName}"></div>
-                    `;
-                    container.appendChild(categorySection);
-                }
-                
-                const grid = categorySection.querySelector(`[data-grid="${categoryName}"]`);
-                const card = document.createElement('a');
-                card.className = 'item-card';
-                card.href = '#';
-                card.innerHTML = `
-                    <div class="item-header">
-                        <div class="item-icon">${emoji}</div>
-                        <div class="item-info">
-                            <div class="item-name">${itemName}</div>
-                        </div>
-                        <svg class="item-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m7 7 10 10"></path>
-                            <path d="M17 7v10H7"></path>
-                        </svg>
-                    </div>
-                    <div class="item-stats">
-                        <div class="stat-row">
-                            <span class="stat-label">Value:</span>
-                            <span class="stat-value">$${value.toLocaleString()}</span>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            }
-
-            // Example: Add some items
-            // Uncomment below to see it in action
-            // addItem("Popular Investments", "Elytra", 286841770, "🪽");
-            // addItem("Popular Investments", "Dragon Head", 29086713, "🐉");
-            // addItem("Netherite", "Netherite Ingot", 5140722, "🔱");
+     
         </script>
     </body>
 </html>
